@@ -24,8 +24,10 @@ int main()
 
     printArray(n, arr);
     cout << "\n";
+
     reverse(n, arr);
     printArray(n, arr);
+    
     cout << "\n";
 
     return 0;
