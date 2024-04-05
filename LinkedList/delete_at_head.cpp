@@ -106,6 +106,27 @@ public:
         delete b;
         sz--;
     }
+
+    // insert after value
+    void insertAfterValue(int value, int data){
+        Node* a = head;
+        // corner case
+        if(a == NULL){
+            cout << "LinkedList doesn't exist.\n";
+            return;
+        }
+        
+        while(a != NULL){
+            if(a->data == value){
+                break;
+            }
+            a = a->nxt;
+        }
+        // create new node and connect
+        Node* newNode = createNode(data);
+        newNode->nxt = a->nxt;
+        a->nxt = newNode;
+    }
 };
 
 int main()
@@ -135,6 +156,10 @@ int main()
     cout << "Size: " << l.getSize() << "\n";
 
     l.deleteAtAnyIndex(2);
+    l.traverse();
+    cout << "Size: " << l.getSize() << "\n";
+
+    l.insertAfterValue(20, 100);
     l.traverse();
     cout << "Size: " << l.getSize() << "\n";
 
