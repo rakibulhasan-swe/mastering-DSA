@@ -62,6 +62,9 @@ public:
         reversePrint(a->nxt);
         cout << a->data << " ";
     }
+    void rp(){
+        reversePrint(head);
+    }
 };
 
 int main()
@@ -78,7 +81,8 @@ int main()
     l.traverse();
     cout << "Size: " << l.getSize() << "\n";
 
-    l.reversePrint(l.head);
+    l.rp();
+    cout << "\n";
 
     return 0;
 }
