@@ -86,20 +86,32 @@ public:
 
     // delete a node
     void deleteAnyNode(int idx){
+        if(idx >= sz){
+            cout << "index does not exist.\n";
+            return;
+        }
         sz--;
 
         Node* a = head;
 
         int cur_idx = 0;
-        while(cur_idx != idx-1){
+        while(cur_idx != idx){
             a = a->nxt;
+            cur_idx++;
         }
+        Node* prevNode = a->prv;
         Node* nextNode = a->nxt;
 
-        a->nxt = nextNode->nxt;
-        nextNode->nxt->prv = a;
-
-        delete nextNode;
+        if(prevNode!=NULL){
+            prevNode->nxt = nextNode;
+        }
+        if(nextNode!=NULL){
+            nextNode->prv = prevNode;
+        }
+        delete a;
+        if(idx==0){
+            head = nextNode;
+        }
     }
 };
 
