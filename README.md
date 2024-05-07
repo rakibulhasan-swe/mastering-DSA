@@ -1,1 +1,1 @@
-# Mastering DSA + CP related tips and trics
+# Mastering DSA + CP
