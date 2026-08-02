@@ -1,1 +1,1 @@
-Sum of two = 9
+Not Prime
